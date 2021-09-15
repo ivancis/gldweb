@@ -6,16 +6,39 @@
 
 <style>
 	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
+		display: grid;
+		align-content: flex-start;
+		grid-gap: 1rem;
+		padding: 1rem 1rem 10vh;
+		width: 100%;
+		min-height: 100vh;
+		margin: 0;
+		font-family: var(--family);
+		font-size: 17px;
+		letter-spacing: 0.1px;
+		color: var(--text);
+		background-color: var(--bg);
+		background: linear-gradient(346deg, var(--bg), var(--thumb-bg));
+		background-size: 400% 400%;
+
+		-webkit-animation: AnimationName 10s ease infinite;
+		-moz-animation: AnimationName 10s ease infinite;
+		animation: AnimationName 10s ease infinite;
+
+
+		transition: color .2s cubic-bezier(.445, .05, .55, .95),
+		background .2s cubic-bezier(.445, .05, .55, .95),
+		padding .2s cubic-bezier(.445, .05, .55, .95);
+	}
+
+	@keyframes AnimationName {
+		0%{background-position:0% 97%}
+		50%{background-position:100% 4%}
+		100%{background-position:0% 97%}
 	}
 </style>
 
-<Nav {segment}/>
+<!-- <Nav {segment}/> -->
 
 <main>
 	<slot></slot>
