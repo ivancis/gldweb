@@ -1,6 +1,6 @@
 body {
-	--colSize: 990px;
-	--colSizeLg: 1200px;
+	--colSize: 90ch;
+	--colSizeLg: 94ch;
 	--primary: #0600c3;
 	--primary-active: #4f00c3;
 	--text: #180029;

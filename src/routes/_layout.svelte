@@ -9,7 +9,7 @@
 		display: grid;
 		align-content: flex-start;
 		grid-gap: 1rem;
-		padding: 1rem 1rem 10vh;
+		padding: 1rem 2rem 10vh;
 		width: 100%;
 		min-height: 100vh;
 		margin: 0;
