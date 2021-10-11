@@ -1,5 +1,5 @@
 body {
-	--colSize: 90ch;
+	--colSize: 80ch;
 	--colSizeLg: 94ch;
 	--primary: #0600c3;
 	--primary-active: #4f00c3;
@@ -9,8 +9,8 @@ body {
 	--bgLight: rgb(55 49 58 / 15%);
 	--thumb-bg: #dbdbdb;
 	--scrollbar-bg: #fcfaff;
-	--pain: #f8464e;
-	--gain: #73cf17;
+	--accentA: #f8464e;
+	--accentB: #73cf17;
 	--info: #3f51b5;
 	--disabled: #fcfaff;
 	--monospace: menlo, inconsolata, monospace;

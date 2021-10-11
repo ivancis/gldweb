@@ -6,7 +6,6 @@
 			id: 1,
 			layout: true,
 			title: "Gaming localization",
-			// content: "BA in Technical-Scientific and Literay Translation in English, but I specialice in video-game localization.",
 			content: "Termbase software controls,  individual game’s terminology. Following multilingual styleguides, paving the way for consistent internal and external lexicon, writing style and tone.",
 			active: false,
 		},
@@ -21,14 +20,14 @@
 			id: 3,
 			compass: true,
 			title: "Collaboration",
-			content: "Experienced managing consistency across multiple cross-functional teams, with an agile aproach. Excelent communication and presentation skills, knowledge sharing and mentorship. XXXXXX type personality.",
+			content: "Experienced managing consistency across multiple cross-functional teams, with an agile aproach. Native facilitator, presentations, knowledge sharing and mentorship. XXX-type personality.",
 			active: false,
 		},
 		{
 			id: 4,
 			duck: true,
 			title: "Rubberduck",
-			content: "Frequent problem spotter, experienced in business-driver KPI's, mission mindset. Some experience with manual and user-acceptance testing for front-end development.",
+			content: "Frequent problem spotter, experienced in business-driver KPI's, mission mindset. Some experience with userAcceptanceCriteria and manual testing for front-end aplications.",
 			active: false,
 		}
 	]
@@ -83,7 +82,7 @@
 		stroke: currentColor;
 		stroke-width: 1px;
 		stroke-linecap: round;
-		stroke-linejoin: round;
+		stroke-linejoin: bevel;
 	}
 
 	.accordion-title {
@@ -96,17 +95,18 @@
     	margin: 0 auto 1rem 1.5rem;
 	}
 
-	.svg-ux {
-		transform: translateX(4px);
-		transition: transform calc(var(--duration, .15s)/2) var(--bezier, cubic-bezier(.445, .05, .55, .95)),
+	.svg-gaming {
 	}
-	.svg-ux__line {
-		opacity: 0
+	
+	.svg-literacy {
+		/* background: indigo; */
 	}
-	.svg-ux__cross, .svg-ux__tick {
-		stroke-dasharray: 10;
-		stroke-dashoffset: 10
+
+	.svg-literacy__page {
+		/* stroke: blue; */
+		stroke-linecap: butt;
 	}
+
 	.svg-code__chevron-left {
 		transform: translateX(4px)
 	}
@@ -124,20 +124,12 @@
 		transform-origin: 50%
 	}
 	.accordion__item.is-active .svg-layout__vertical {
-		animation: 1.2s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite both layout-vertical
+		animation: 1.3s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite both layout-vertical
 	}
 	.accordion__item.is-active .svg-layout__horizontal {
-		animation: 1.4s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite both layout-horizontal
+		animation: 1.5s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite both layout-horizontal
 	}
-	.accordion__item.is-active .svg-ux__line {
-		opacity: 1
-	}
-	.accordion__item.is-active .svg-ux__cross {
-		animation: errormark 4s linear infinite both
-	}
-	.accordion__item.is-active .svg-ux__tick {
-		animation: checkmark 2s linear infinite both
-	}
+	
 	.accordion__item.is-active .svg-code__chevron-left, .accordion__item.is-active .svg-code__chevron-right {
 		transform: none
 	}
@@ -154,6 +146,61 @@
 	.accordion__item.is-active .svg-compass__needle {
 		animation: waggle 1s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite;
 		transform-origin: 50%
+	}
+	.accordion__item.is-active .svg-gaming {
+		animation: 1.3s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite both shake-bottom;
+	}
+	
+	.accordion__item.is-active .svg-literacy__page {
+		animation: 1.4s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite both bookPage;
+	}
+
+	@keyframes bookPage {
+		0% {
+			transform: translateX(0px);
+			opacity: 0;
+		}
+		50% {
+			transform: translateX(0px);
+			opacity: 1;
+		}
+		100% {
+			transform: translateX(-20px);
+		}
+	}
+
+	@keyframes shake-bottom {
+		0%,
+		100% {
+			-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+			-webkit-transform-origin: 50% 100%;
+					transform-origin: 50% 100%;
+		}
+		10% {
+			-webkit-transform: rotate(2deg);
+					transform: rotate(2deg);
+		}
+		20%,
+		40%,
+		60% {
+			-webkit-transform: rotate(-4deg);
+					transform: rotate(-4deg);
+		}
+		30%,
+		50%,
+		70% {
+			-webkit-transform: rotate(4deg);
+					transform: rotate(4deg);
+		}
+		80% {
+			-webkit-transform: rotate(-2deg);
+					transform: rotate(-2deg);
+		}
+		90% {
+			-webkit-transform: rotate(2deg);
+					transform: rotate(2deg);
+		}
 	}
 
 	@keyframes rock-duck {
@@ -341,7 +388,7 @@
 				<line class="svg-layout__horizontal" x1="3" x2="21" y1="9" y2="9"></line>
 				<line class="svg-layout__vertical" x1="9" x2="9" y1="21" y2="3"></line></svg> -->
 				<!-- Generator: Adobe Illustrator 25.1.0, SVG Export Plug-In  -->
-			<svg version="1.1" viewbox="0 0 24 24">
+			<svg version="1.1" viewbox="0 0 24 24" class="svg-gaming">
 				<line x1="7.8" y1="9.1" x2="7.8" y2="12.4"/>
 				<line x1="9.4" y1="10.7" x2="6.1" y2="10.7"/>
 				<circle cx="13.8" cy="10.7" r="0.1"/>
@@ -357,9 +404,13 @@
 		{/if}
 		{#if section.user}
 			<div class="accordion-icon">
-				<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-					<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-					<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+				<svg
+					viewBox="0 0 24 24"
+					class="svg-literacy"
+				>
+					<path d="M2,3h6c2.2,0,4,1.8,4,4v14c0-1.7-1.3-3-3-3H2V3z"/>
+					<path d="M22,3h-6c-2.2,0-4,1.8-4,4v14c0-1.7,1.3-3,3-3h7V3z"/>
+					<path class="svg-literacy__page" d="M22,18V3"/>
 				</svg>
 			</div>
 		{/if}
