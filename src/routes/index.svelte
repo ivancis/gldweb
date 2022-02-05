@@ -19,7 +19,7 @@
 <style>
 	.col {
 		display: grid;
-		grid-gap: 3rem;
+		grid-gap: 10vh;
 		margin: 0 auto auto;
 		width: 100%;
 		max-width: var(--colSize);
@@ -33,21 +33,32 @@
 	}
 
 	.contact-details {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		display: flex;
+		flex-wrap: wrap;
 		grid-gap: 2rem;
 		margin: 1rem auto 1rem 0;
 	}
 
 	.contact-details__item {
+		flex: 1 0 auto;
     	margin: -.5rem;
 	}
 
 	.contact-details__link {
 		display: flex;
 		align-items: center;
+		padding: 0;
 		gap: 0.5rem;
 		padding: .5rem;
+	}
+	
+	.contact-details__link--mega {
+		font-size: 1.5rem;
+		padding: 0;
+	}
+	
+	.contact-details__link--mega:hover {
+		text-decoration: underline;
 	}
 
 	.homepage__section {
@@ -56,89 +67,37 @@
 	}
 	
 	.homepage__section-portfolio {
-		grid-template-columns: repeat(auto-fit, minmax(min-content, calc(40ch - 1rem)));
-		grid-gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(min-content, calc(var(--colSize) / 2 - 1.5rem)));
+		grid-gap: 3rem;
 	}
 	
 	.homepage__section-contact-details {
+		max-width: 50ch;
+		grid-gap: 2rem;
 	}
 	
 	.homepage__section-contact-details p {
-		max-width: 40ch;
+		max-width: var(--colSize);
 	}
 	
 	.homepage__section-quote p {
 		text-align: center;
-		font-size: 11px;
+		font-size: 0.75rem;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: var(--border);
+		padding: 1rem;
+		opacity: 0.5;
+		border-radius: 1rem;
 	}
 
-	.switcher {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0 2ch;
+	.bio {
+		display: grid;
+		gap: 2rem;
 		margin: auto auto auto 0;
 		align-items: center;
-	}
-
-	.switcharoo {
-		position: relative;
-		padding: 2px;
-		width: 8rem;
-		height: 4rem;
-		background-color: var(--scrollbar-bg);
-		border-radius: 0.25rem;
-		cursor: pointer;
-	}
-	
-	.switcharoo input {
-		position: absolute;
-		left: 0;
-    	top: 0;
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		cursor: pointer;
-		opacity: 0;
-	}
-
-	.switch {
-		height: 100%;
-		display: grid;
-		grid-template-columns: 0fr 1fr 1fr;
-		transition: 0.2s;
-		cursor: pointer;
-	}
-
-	.switch::after {
-		content: "";
-		border-radius: 0.25rem;
-		background: var(--bg);
-		grid-column: 2;
-		transition: background 0.2s;
-	}
-
-	.switcharoo input:checked + .switch {
-		grid-template-columns: 1fr 1fr 0fr;
-	}
-
-	.switcharoo input:checked + .switch::after {
-		background: var(--bg);
-	}
-
-	.switch-mock {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		margin: auto;
-		align-items: center;
-		justify-content: center;
-		position: absolute;
-		left: 0;
-		top: 0;
-		padding: 0.5rem;
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		pointer-events: none;
+		max-width: 60ch;
 	}
 
 	.works-list {
@@ -155,7 +114,7 @@
 	.works-link {
 		display: grid;
 		grid-template-columns: auto 1fr;
-		grid-gap: 1rem;
+		grid-gap: 1.5rem;
 		margin: -.5rem;
 		padding: .5rem;
 		width: 100%;
@@ -185,24 +144,32 @@
 	.works-link__text {
 		display: grid;
 		grid-gap: 0.5rem;
+		margin: auto 0;
 	}
 	
 	.works-link__cover {
-		border: 1px dashed olive;
 		font-size: 8px;
 		padding: 2px;
 		text-align: center;
 		font-family: monospace;
-		width: 4rem;
-		height: 4rem;
-		border-radius: 0.25rem;
+		width: 6rem;
+		height: 6rem;
+		border-radius: 0.5rem;
 		overflow: hidden;
+		position: relative;
+		border: 1px solid var(--border);
+	}
+
+	.works-link__cover img {
+		width: 100%;
+		object-fit: cover;
+		filter: blur(1rem);
 	}
 
 	.works-link h5 {
 		margin: auto 0;
 		font-size: .85rem;
-		opacity: 0;
+		/* opacity: 0; */
 	}
 
 	@media (max-width: 740px) {
@@ -243,17 +210,9 @@
 <div class="col">
 	<header>
 		<h1>Hola, I’m Gonzalo.</h1>
-		<div class="switcher">
-			<h2>I'm a </h2>
-			<span class="switcharoo">
-				<input type="checkbox" on:click={toggle} />
-				<div class="switch" />
-				<div class="switch-mock">
-					<span>🇬🇧</span>
-					<span>🇪🇸</span>
-				</div>
-			</span>
-			<h2>translator.</h2>
+		<div class="bio">
+			<h2>I'm a Gameloc Specialist.</h2>
+			<h3>If you are looking for a passionate, committed, creative professional translator: you have found it!</h3>
 		</div>
 	</header>
 	<section class="homepage__section homepage__section-portfolio">
@@ -265,13 +224,17 @@
 			I'm also experienced as a generalist for different projects, like IT documentation, media & press, corporate videos subtitles, voiceovers, interviews and surveys.
 		</p> -->
 		<div class="accordions">
+			<h5 class="section-title">What I do:</h5>
 			<Accordion/>
 		</div>
 		<ul class="works-list">
+			<h5 class="section-title">Case studies:</h5>
 			{#each posts as post}
 				<li class="works-item">
 					<a class="works-link" rel='prefetch' href='blog/{post.slug}'>
-						<span class="works-link__cover">{post.cover}</span>
+						<span class="works-link__cover">
+							<img src={post.cover} alt={post.title} />
+						</span>
 						<span class="works-link__text">
 							<h3>{post.title}</h3>
 							<h5>{post.description}</h5>
@@ -279,25 +242,41 @@
 					</a>
 				</li>
 			{/each}
-			<li class="works-item">
-				<p class="works-link">Please reach out for more</p>
-			</li>
 		</ul>
 	</section>
 	<section class="homepage__section homepage__section-contact-details">
+		<h5 class="section-title">Get in touch:</h5>
+		<a
+			href="mailto:diazgonzaloluis@gmail.com?Subject=Hello%20Gonzalo"
+			target="_blank"
+			class="contact-details__link contact-details__link--mega link"
+		>
+			email@email.com
+		</a>
+		<a href="tel:+54 341 3157805" class="contact-details__link contact-details__link--mega link">
+			<svg
+				viewBox="0 0 24 24"
+				width="16"
+				height="16"
+				stroke="currentColor"
+				stroke-width="2"
+				fill="none"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			>
+				<path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+			</svg>
+			+54 341 3157805
+		</a>
 		<p>
-			I cordially invite you to
-			<a href="mailto:diazgonzaloluis@gmail.com?Subject=Hello%20Gonzalo" target="_top" class="link">
-				get in touch
-			</a>
-			for any consultation and work inqueries.
+			I'd absolutly love to share a chat for any consultation and work inqueries you may have.
 		</p>
 		<p>
 			GMT-3 (Argentina)
 		</p>
 		<ul class="contact-details">
 			<li class="contact-details__item">
-				<a href="mailto:diazgonzaloluis@gmail.com?Subject=Hello%20Gonzalo" target="_top" class="contact-details__link link">
+				<a href="mailto:diazgonzaloluis@gmail.com?Subject=Hello%20Gonzalo" target="_blank" class="contact-details__link link">
 					<svg
 						viewBox="0 0 24 24"
 						width="16"
@@ -313,23 +292,6 @@
 					</svg>
 					Email
 				</a>
-			</li>
-			<li class="contact-details__item">
-				<span class="contact-details__link">
-					<svg
-						viewBox="0 0 24 24"
-						width="16"
-						height="16"
-						stroke="currentColor"
-						stroke-width="2"
-						fill="none"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					>
-						<path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-					</svg>
-					+54 341 3157805
-				</span>
 			</li>
 			<li class="contact-details__item">
 				<a href="https://www.proz.com/profile/3044101" target="_blank" class="contact-details__link link">

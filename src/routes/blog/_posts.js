@@ -14,7 +14,7 @@ const posts = [
 		browsertitle: 'post-01__browserTitle',
 		description: 'post-01__description',
 		date: 2021,
-		cover: 'post-01__cover',
+		cover: 'https://picsum.photos/id/237/100',
 		html: `
 			<div class="intern-nav">
 				<div class="col">
@@ -47,7 +47,7 @@ const posts = [
 		browsertitle: 'post-02__browserTitle',
 		description: 'post-02__description',
 		date: 2021,
-		cover: 'post-02__cover',
+		cover: 'https://picsum.photos/100',
 		html: `
 			<div class="intern-nav">
 				<div class="col">
@@ -80,7 +80,7 @@ const posts = [
 		browsertitle: 'post-03__browserTitle',
 		description: 'post-03__description',
 		date: 2021,
-		cover: 'post-03__cover',
+		cover: 'https://picsum.photos/100/100',
 		html: `
 			<div class="intern-nav">
 				<div class="col">

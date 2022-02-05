@@ -9,13 +9,13 @@
 		display: grid;
 		align-content: flex-start;
 		grid-gap: 1rem;
-		padding: 1rem 2rem 10vh;
+		padding: 1rem 1.5rem 10vh;
 		width: 100%;
 		min-height: 100vh;
 		margin: 0;
 		font-family: var(--family);
 		font-size: 17px;
-		letter-spacing: 0.1px;
+		letter-spacing: 0.025rem;
 		color: var(--text);
 		background-color: var(--bg);
 		background: linear-gradient(346deg, var(--bg), var(--thumb-bg));

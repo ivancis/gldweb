@@ -6,28 +6,28 @@
 			id: 1,
 			layout: true,
 			title: "Gaming localization",
-			content: "Termbase software controls,  individual game’s terminology. Following multilingual styleguides, paving the way for consistent internal and external lexicon, writing style and tone.",
+			content: "Software termbase, JSON edit, individual game’s terminology. Multilingual styleguides, consistent internal and external lexicon, tone of voice definition and documentation.",
 			active: false,
 		},
 		{
 			id: 2,
 			user: true,
-			title: "General literacy",
-			content: "I’ve worked freelance as an individual contributor and in managing positions, in an agile enviroment, for technical/scientific industries. I'm also experienced as a generalist for different projects, like IT documentation, media & press, corporate videos subtitles, voiceovers, interviews and surveys.",
+			title: "Storytelling",
+			content: "Cultural sensibility. Well seasoned in a range of projects: IT documentation, user interviews, surveys audit, media & press, corporate videos subtitles, voiceovers.",
 			active: false,
 		},
 		{
 			id: 3,
 			compass: true,
 			title: "Collaboration",
-			content: "Experienced managing consistency across multiple cross-functional teams, with an agile aproach. Native facilitator, presentations, knowledge sharing and mentorship. XXX-type personality.",
+			content: "Systemic thinker with an agile aproach, experienced in cross-functional teams. Native facilitator, knowledge sharing and mentorship. ISTP-A personality.",
 			active: false,
 		},
 		{
 			id: 4,
 			duck: true,
 			title: "Rubberduck",
-			content: "Frequent problem spotter, experienced in business-driver KPI's, mission mindset. Some experience with userAcceptanceCriteria and manual testing for front-end aplications.",
+			content: "Frequent problem spotter, experienced in business-driver KPI's, mission mindset. Experienced definig acceptance criteria.",
 			active: false,
 		}
 	]
