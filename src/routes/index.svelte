@@ -86,7 +86,7 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		background: var(--border);
+		background: var(--bgLight);
 		padding: 1rem;
 		opacity: 0.5;
 		border-radius: 1rem;
@@ -212,7 +212,7 @@
 		<h1>Hola, I’m Gonzalo.</h1>
 		<div class="bio">
 			<h2>I'm a Gameloc Specialist.</h2>
-			<h3>If you are looking for a passionate, committed, creative professional translator: you have found it!</h3>
+			<h3>If you are looking for a passionate, committed, creative professional translator...<br> you have found it!</h3>
 		</div>
 	</header>
 	<section class="homepage__section homepage__section-portfolio">
@@ -223,10 +223,6 @@
 		<br>
 			I'm also experienced as a generalist for different projects, like IT documentation, media & press, corporate videos subtitles, voiceovers, interviews and surveys.
 		</p> -->
-		<div class="accordions">
-			<h5 class="section-title">What I do:</h5>
-			<Accordion/>
-		</div>
 		<ul class="works-list">
 			<h5 class="section-title">Case studies:</h5>
 			{#each posts as post}
@@ -243,9 +239,16 @@
 				</li>
 			{/each}
 		</ul>
+		<div class="accordions">
+			<h5 class="section-title">What I do:</h5>
+			<Accordion/>
+		</div>
 	</section>
 	<section class="homepage__section homepage__section-contact-details">
 		<h5 class="section-title">Get in touch:</h5>
+		<p>
+			I'm based in Argentina, but mostly available in Eastern Standard Time.
+		</p>
 		<a
 			href="mailto:diazgonzaloluis@gmail.com?Subject=Hello%20Gonzalo"
 			target="_blank"
@@ -256,8 +259,8 @@
 		<a href="tel:+54 341 3157805" class="contact-details__link contact-details__link--mega link">
 			<svg
 				viewBox="0 0 24 24"
-				width="16"
-				height="16"
+				width="24"
+				height="24"
 				stroke="currentColor"
 				stroke-width="2"
 				fill="none"
@@ -271,16 +274,13 @@
 		<p>
 			I'd absolutly love to share a chat for any consultation and work inqueries you may have.
 		</p>
-		<p>
-			GMT-3 (Argentina)
-		</p>
 		<ul class="contact-details">
 			<li class="contact-details__item">
 				<a href="mailto:diazgonzaloluis@gmail.com?Subject=Hello%20Gonzalo" target="_blank" class="contact-details__link link">
 					<svg
 						viewBox="0 0 24 24"
-						width="16"
-						height="16"
+						width="20"
+						height="20"
 						stroke="currentColor"
 						stroke-width="2"
 						fill="none"
@@ -297,8 +297,8 @@
 				<a href="https://www.proz.com/profile/3044101" target="_blank" class="contact-details__link link">
 					<svg
 						viewBox="0 0 24 24"
-						width="16"
-						height="16"
+						width="20"
+						height="20"
 						stroke="currentColor"
 						stroke-width="2"
 						fill="none"
@@ -318,8 +318,8 @@
 				<a href="https://www.linkedin.com/in/gonzalo-luis-d%C3%ADaz-09ab70196/" target="_blank" class="contact-details__link link">
 					<svg
 						viewBox="0 0 24 24"
-						width="16"
-						height="16"
+						width="20"
+						height="20"
 						stroke="currentColor"
 						stroke-width="2"
 						fill="none"
@@ -337,8 +337,8 @@
 				<a href="cv_gdb.pdf" target="_blank" class="contact-details__link link">
 					<svg
 						viewBox="0 0 24 24"
-						width="16"
-						height="16"
+						width="20"
+						height="20"
 						stroke="currentColor"
 						stroke-width="2"
 						fill="none"
@@ -347,8 +347,8 @@
 					>
 						<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
 						<polyline points="14 2 14 8 20 8"></polyline>
-						<line x1="16" y1="13" x2="8" y2="13"></line>
-						<line x1="16" y1="17" x2="8" y2="17"></line>
+						<line x1="20" y1="13" x2="8" y2="13"></line>
+						<line x1="20" y1="17" x2="8" y2="17"></line>
 						<polyline points="10 9 9 9 8 9"></polyline>
 					</svg>
 					Resume
@@ -358,8 +358,8 @@
 	</section>
 	<section class="homepage__section homepage__section-quote">
 		<p>
-			<em>“A strong man doesn’t need to read the future. He makes his own.”</em><br>
-			— Solid Snake, ‘Metal Gear Solid’.
+			<em>“We all make choices in life, but in the end our choices make us.”</em><br>
+			— Andrew Ryan, ‘Bioshock’.
 		</p>
 	</section>
 </div>

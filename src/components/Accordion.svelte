@@ -4,30 +4,34 @@
 	let sections = [
 		{
 			id: 1,
-			layout: true,
+			gaming: true,
+			class: "gaming",
 			title: "Gaming localization",
-			content: "Software termbase, JSON edit, individual game’s terminology. Multilingual styleguides, consistent internal and external lexicon, tone of voice definition and documentation.",
+			content: "Internationalization for target audiences in culture, region, and language. JSON file edit for software termbase, specific game terminology. Styleguides, internal/external lexicon, tone of voice definition and documentation.",
 			active: false,
 		},
 		{
 			id: 2,
-			user: true,
+			literacy: true,
+			class: "literacy",
 			title: "Storytelling",
-			content: "Cultural sensibility. Well seasoned in a range of projects: IT documentation, user interviews, surveys audit, media & press, corporate videos subtitles, voiceovers.",
+			content: "Well seasoned in a range of projects: IT documentation, user interviews, surveys audit, media & press, corporate videos subtitles, some voiceovers.",
 			active: false,
 		},
 		{
 			id: 3,
 			compass: true,
+			class: "compass",
 			title: "Collaboration",
-			content: "Systemic thinker with an agile aproach, experienced in cross-functional teams. Native facilitator, knowledge sharing and mentorship. ISTP-A personality.",
+			content: "Systemic thinker with an agile aproach, experienced in cross-functional teams. Native facilitator, knowledge sharing, mentorship. ISTP-A personality.",
 			active: false,
 		},
 		{
 			id: 4,
 			duck: true,
+			class: "duck",
 			title: "Rubberduck",
-			content: "Frequent problem spotter, experienced in business-driver KPI's, mission mindset. Experienced definig acceptance criteria.",
+			content: "Mission mindset, business-driver KPI, task prioritization, constraint management. Experienced definig and managing acceptance criteria.",
 			active: false,
 		}
 	]
@@ -50,7 +54,7 @@
 	}
 	
 	.accordion__item:last-child {
-		--accordionContentBorder: none;
+		/* --accordionContentBorder: none; */
 	}
 
 	.accordion__trigger {
@@ -66,8 +70,32 @@
 		color: var(--primary);
 	}
 
-	.accordion__trigger.is-active {
-		color: var(--primary-active);
+	.accordion__item--gaming .accordion-icon[data-active="true"]  {
+		color: var(--accentA);
+	}
+	.accordion__item--gaming {
+		--accordionContentBorder: 1px solid var(--accentA);
+	}
+	
+	.accordion__item--literacy .accordion-icon[data-active="true"]  {
+		color: var(--accentB);
+	}
+	.accordion__item--literacy {
+		--accordionContentBorder: 1px solid var(--accentB);
+	}
+	
+	.accordion__item--compass .accordion-icon[data-active="true"]  {
+		color: var(--accentC);
+	}
+	.accordion__item--compass {
+		--accordionContentBorder: 1px solid var(--accentC);
+	}
+	
+	.accordion__item--duck .accordion-icon[data-active="true"]  {
+		color: var(--accentD);
+	}
+	.accordion__item--duck {
+		--accordionContentBorder: 1px solid var(--accentD);
 	}
 
 	.accordion-icon {
@@ -76,8 +104,8 @@
 	}
 
 	.accordion-icon svg {
-		width: 2em;
-		height: 2em;
+		width: 32px;
+		height: 32px;
 		fill: none;
 		stroke: currentColor;
 		stroke-width: 1px;
@@ -90,16 +118,9 @@
 	}
 
 	.accordion-content {
-		padding: 0 1rem 0 2rem;
+		padding: 0 16px 0 32px;
     	border-left: var(--accordionContentBorder, 1px solid var(--border));
-    	margin: 0 auto 1rem 1.5rem;
-	}
-
-	.svg-gaming {
-	}
-	
-	.svg-literacy {
-		/* background: indigo; */
+    	margin: 0 auto 16px 24px;
 	}
 
 	.svg-literacy__page {
@@ -123,35 +144,35 @@
 		transform: rotate(-12deg);
 		transform-origin: 50%
 	}
-	.accordion__item.is-active .svg-layout__vertical {
+	.accordion__item[data-active="true"] .svg-layout__vertical {
 		animation: 1.3s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite both layout-vertical
 	}
-	.accordion__item.is-active .svg-layout__horizontal {
+	.accordion__item[data-active="true"] .svg-layout__horizontal {
 		animation: 1.5s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite both layout-horizontal
 	}
 	
-	.accordion__item.is-active .svg-code__chevron-left, .accordion__item.is-active .svg-code__chevron-right {
+	.accordion__item[data-active="true"] .svg-code__chevron-left, .accordion__item[data-active="true"] .svg-code__chevron-right {
 		transform: none
 	}
-	.accordion__item.is-active .svg-code__character {
+	.accordion__item[data-active="true"] .svg-code__character {
 		animation: steady-blink 1s step-end infinite both
 	}
-	.accordion__item.is-active .svg-duck {
+	.accordion__item[data-active="true"] .svg-duck {
 		animation: rock-duck 1s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite;
 		transform-origin: 50%
 	}
-	.accordion__item.is-active .svg-duck__eye {
+	.accordion__item[data-active="true"] .svg-duck__eye {
 		animation: blink 1s infinite both
 	}
-	.accordion__item.is-active .svg-compass__needle {
+	.accordion__item[data-active="true"] .svg-compass__needle {
 		animation: waggle 1s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite;
 		transform-origin: 50%
 	}
-	.accordion__item.is-active .svg-gaming {
+	.accordion__item[data-active="true"] .svg-gaming {
 		animation: 1.3s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite both shake-bottom;
 	}
 	
-	.accordion__item.is-active .svg-literacy__page {
+	.accordion__item[data-active="true"] .svg-literacy__page {
 		animation: 1.4s var(--bezier, cubic-bezier(.445, .05, .55, .95)) infinite both bookPage;
 	}
 
@@ -379,10 +400,10 @@
 </style>
 
 {#each sections as section}
-<div class="accordion__item" class:is-active="{section.active}">
-	<div class="accordion__trigger" class:is-active="{section.active}" on:click={() => expand(section) }>
-		{#if section.layout}
-			<div class="accordion-icon">
+<div class={`accordion__item accordion__item--${section.class}`} data-active={section.active}>
+	<div class="accordion__trigger" data-active={section.active} on:click={() => expand(section) }>
+		{#if section.gaming}
+			<div class="accordion-icon" data-active={section.active}>
 				<!-- <svg version="1.1" viewbox="0 0 24 24">
 				<path class="svg-layout__frame" d="M5,3h14c1.1,0,2,0.9,2,2v14c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V5C3,3.9,3.9,3,5,3z"></path>
 				<line class="svg-layout__horizontal" x1="3" x2="21" y1="9" y2="9"></line>
@@ -402,8 +423,8 @@
 			</svg>
 			</div>
 		{/if}
-		{#if section.user}
-			<div class="accordion-icon">
+		{#if section.literacy}
+			<div class="accordion-icon" data-active={section.active}>
 				<svg
 					viewBox="0 0 24 24"
 					class="svg-literacy"
@@ -415,7 +436,7 @@
 			</div>
 		{/if}
 		{#if section.code}
-			<div class="accordion-icon">
+			<div class="accordion-icon" data-active={section.active}>
 				<svg version="1.1" viewbox="0 0 24 24">
 				<polyline class="svg-code__chevron-right" points="19,15.8 23,11.8 19,7.8"></polyline>
 				<line class="svg-code__character" x1="9" x2="15" y1="17.8" y2="17.8"></line>
@@ -423,14 +444,14 @@
 			</div>
 		{/if}
 		{#if section.duck}
-			<div class="accordion-icon">
+			<div class="accordion-icon" data-active={section.active}>
 				<svg class="svg-duck" version="1.1" viewbox="0 0 24 24">
 				<path class="svg-duck__shape" d="M21.1,7.2c0-0.2-0.2-0.4-0.4-0.4c-1,0-2-0.6-2.5-1.5c-0.7-1.8-2.4-2.2-4-2.2c-3,0-4.7,2.3-4.7,4.5 c0,1.5,0.2,2.6,1.2,3.5c-1.7,0-2.8,0.5-3.8,0.9c-1.1,0.5-1.9,0.8-3.4,0.2c-0.7-0.3-1.3,0.2-1.3,0.9c0.2,1.9,0.9,3.7,1.9,5.1 c1.2,1.6,2.9,2.7,4.7,2.7c2.1,0,4.3,0,6.4,0c1.6-0.1,2.8-0.8,3.6-1.7c0.8-0.9,1.1-2.1,1.1-3.2c0-2.2-1.4-3.7-2.5-5 C17.4,11,20.9,10.9,21.1,7.2z"></path>
 				<line class="svg-duck__eye" x1="15.1" x2="15.1" y1="7.3" y2="7.3"></line></svg>
 			</div>
 		{/if}
 		{#if section.compass}
-			<div class="accordion-icon">
+			<div class="accordion-icon" data-active={section.active}>
 				<svg version="1.1" viewbox="0 0 24 24">
 				<circle class="svg-compass" cx="12" cy="12" r="10"></circle>
 				<polygon class="svg-compass__needle" points="12,6 9,12 12,18 15,12"></polygon></svg>

@@ -6,16 +6,19 @@ body {
 	--primary: #0600c3;
 	--primary-active: #4f00c3;
 	--text: #180029;
-	--border: #dbdbdb;
+	--border: #dbd7d6;
 	--bg: #fcfaff;
 	--bgLight: rgb(55 49 58 / 15%);
 	--thumb-bg: #dbdbdb;
-	--scrollbar-bg: #fcfaff;
-	--accentA: #f8464e;
-	--accentB: #73cf17;
+	--scrollbar-bg: #dbdbdb;
 	--info: #3f51b5;
 	--disabled: #fcfaff;
 	--monospace: menlo, inconsolata, monospace;
+
+	--accentA: #40ccd0;
+	--accentB: #73cf17;
+	--accentC: #e46767;
+	--accentD: #f99006;
 
 	--family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 	--regular: 300;
@@ -166,7 +169,6 @@ strong, b {
 	display: block;
 	height: 2px;
 	background: var(--border);
-	opacity: 0.25;
 }
 
 hr {
