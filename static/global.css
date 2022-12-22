@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
 	--colSize: 75ch;
@@ -19,13 +19,12 @@ body {
 	--accentA: #393fe3;
 	--accentB: #0a6662;
 	--accentC: #e46767;
-	--accentD: #f99006;
+	--accentD: #f99006;	
 
-	--family: 'Unbounded', -apple-system, BlinkMacSystemFont, sans-serif;
-	--titleSize: 15px;
-	--titleSize: 1rem;
-	--regular: 300;
-	--bold: 500;
+	--family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+	--titleSize: 12px;
+	--regular: 400;
+	--bold: 600;
 	
 	margin: 0;
 	scrollbar-width: thin;
@@ -43,7 +42,7 @@ body {
 @media (min-width: 1152px) {
   body {
     --titleSize: 24px;
-		--colSize: 1152px;
+		--colSize: 784px;
   }
 }
 
@@ -108,10 +107,14 @@ h5 {
 }
 
 p {
-	margin: 0;
+	margin: 0 auto 0 0;
 	line-height: 1.6;
 	font-size: var(--titleSize);
 	max-width: 48rem;
+}
+
+p em {
+	font-size: calc(var(--titleSize) * 0.875);
 }
 
 hr {

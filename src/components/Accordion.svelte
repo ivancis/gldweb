@@ -12,32 +12,32 @@
 		},
 		{
 			id: 2,
-			gaming: true,
-			class: "gaming",
+			users: true,
+			class: "users",
 			title: "Consultancy",
 			content: "Helping you internationalize your video game to ensure a flawless localization. Not sure what languages to localize you game into? I can help with that, too!",
 			active: false,
 		},
 		{
 			id: 3,
-			gaming: true,
-			class: "gaming",
+			planet: true,
+			class: "planet",
 			title: "SEO and ASO",
 			content: "Choosing the perfect words to improve your ranking on game stores and search engines.",
 			active: false,
 		},
 		{
 			id: 4,
-			gaming: true,
-			class: "gaming",
+			checkright: true,
+			class: "checkright",
 			title: "Testing/LQA",
 			content: "Finding context mistakes, truncated text, and grammar errors by playing the game. Don’t become the next localization meme!",
 			active: false,
 		},
 		{
 			id: 5,
-			gaming: true,
-			class: "gaming",
+			literacy: true,
+			class: "literacy",
 			title: "Glossary creation",
 			content: "Crafting customized glossaries and translation memories to ensure a consistent localization.",
 			active: false,
@@ -113,30 +113,38 @@
 
 	.accordion__item--gaming .accordion-icon[data-active="true"]  {
 		color: var(--accentA);
+		color: var(--primary);
 	}
 	.accordion__item--gaming {
 		--accordionContentBorder: 1px solid var(--accentA);
+		--accordionContentBorder: 1px solid var(--primary);
 	}
 	
 	.accordion__item--literacy .accordion-icon[data-active="true"]  {
 		color: var(--accentB);
+		color: var(--primary);
 	}
 	.accordion__item--literacy {
 		--accordionContentBorder: 1px solid var(--accentB);
+		--accordionContentBorder: 1px solid var(--primary);
 	}
 	
 	.accordion__item--compass .accordion-icon[data-active="true"]  {
 		color: var(--accentC);
+		color: var(--primary);
 	}
 	.accordion__item--compass {
 		--accordionContentBorder: 1px solid var(--accentC);
+		--accordionContentBorder: 1px solid var(--primary);
 	}
 	
 	.accordion__item--duck .accordion-icon[data-active="true"]  {
 		color: var(--accentD);
+		color: var(--primary);
 	}
 	.accordion__item--duck {
 		--accordionContentBorder: 1px solid var(--accentD);
+		--accordionContentBorder: 1px solid var(--primary);
 	}
 
 	.accordion-icon {
@@ -145,8 +153,8 @@
 	}
 
 	.accordion-icon svg {
-		width: 48px;
-		height: 48px;
+		width: 32px;
+		height: 32px;
 		fill: none;
 		stroke: currentColor;
 		stroke-width: 1px;
@@ -444,7 +452,7 @@
 	<div class="accordion__trigger" data-active={section.active} on:click={() => expand(section) }>
 		{#if section.gaming}
 			<div class="accordion-icon" data-active={section.active}>
-				<!-- <svg version="1.1" viewbox="0 0 24 24">
+				<!-- <svg class="svg-duck" version="1.1" viewbox="0 0 24 24">
 				<path class="svg-layout__frame" d="M5,3h14c1.1,0,2,0.9,2,2v14c0,1.1-0.9,2-2,2H5c-1.1,0-2-0.9-2-2V5C3,3.9,3.9,3,5,3z"></path>
 				<line class="svg-layout__horizontal" x1="3" x2="21" y1="9" y2="9"></line>
 				<line class="svg-layout__vertical" x1="9" x2="9" y1="21" y2="3"></line></svg> -->
@@ -475,26 +483,30 @@
 				</svg>
 			</div>
 		{/if}
-		{#if section.code}
+		{#if section.planet}
 			<div class="accordion-icon" data-active={section.active}>
-				<svg version="1.1" viewbox="0 0 24 24">
-				<polyline class="svg-code__chevron-right" points="19,15.8 23,11.8 19,7.8"></polyline>
-				<line class="svg-code__character" x1="9" x2="15" y1="17.8" y2="17.8"></line>
-				<polyline class="svg-code__chevron-left" points="5,7.8 1,11.8 5,15.8"></polyline></svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe">
+					<circle cx="12" cy="12" r="10"></circle>
+					<line x1="2" y1="12" x2="22" y2="12"></line>
+					<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+				</svg>
 			</div>
 		{/if}
-		{#if section.duck}
+		{#if section.checkright}
 			<div class="accordion-icon" data-active={section.active}>
 				<svg class="svg-duck" version="1.1" viewbox="0 0 24 24">
-				<path class="svg-duck__shape" d="M21.1,7.2c0-0.2-0.2-0.4-0.4-0.4c-1,0-2-0.6-2.5-1.5c-0.7-1.8-2.4-2.2-4-2.2c-3,0-4.7,2.3-4.7,4.5 c0,1.5,0.2,2.6,1.2,3.5c-1.7,0-2.8,0.5-3.8,0.9c-1.1,0.5-1.9,0.8-3.4,0.2c-0.7-0.3-1.3,0.2-1.3,0.9c0.2,1.9,0.9,3.7,1.9,5.1 c1.2,1.6,2.9,2.7,4.7,2.7c2.1,0,4.3,0,6.4,0c1.6-0.1,2.8-0.8,3.6-1.7c0.8-0.9,1.1-2.1,1.1-3.2c0-2.2-1.4-3.7-2.5-5 C17.4,11,20.9,10.9,21.1,7.2z"></path>
-				<line class="svg-duck__eye" x1="15.1" x2="15.1" y1="7.3" y2="7.3"></line></svg>
+					<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+					<polyline points="22 4 12 14.01 9 11.01"></polyline>
+				</svg>
 			</div>
 		{/if}
-		{#if section.compass}
+		{#if section.users}
 			<div class="accordion-icon" data-active={section.active}>
-				<svg version="1.1" viewbox="0 0 24 24">
-					<circle class="svg-compass" cx="12" cy="12" r="10"></circle>
-					<polygon class="svg-compass__needle" points="12,6 9,12 12,18 15,12"></polygon>
+				<svg class="svg-duck" version="1.1" viewbox="0 0 24 24">
+					<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+					<circle cx="9" cy="7" r="4"></circle>
+					<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+					<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
 				</svg>
 			</div>
 		{/if}

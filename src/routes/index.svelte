@@ -42,8 +42,8 @@
 	}
 
 	.contact__item {
-		flex: 1 0 auto;
-    	margin: -.5rem;
+		flex: 0 0 auto;
+    margin: -.5rem;
 	}
 
 	.contact__link {
@@ -78,17 +78,17 @@
 		grid-gap: 2rem;
 		padding: 2rem;
 		border-radius: 1rem;
+		background: var(--bgLight);
+		border-radius: 1rem;
 	}
 	
-	.homepage__section-quote p {
+	.homepage__section--quote {
 		text-align: center;
-		bottom: 0;
-		left: 0;
+	}
+
+	.homepage__section--quote p {
+		margin: 0 auto;
 		width: 100%;
-		background: var(--bgLight);
-		padding: 1rem;
-		opacity: 0.5;
-		border-radius: 1rem;
 	}
 
 	.bio {
@@ -279,6 +279,41 @@
 		</a> -->
 		<ul class="contact">
 			<li class="contact__item">
+				<a href="" target="_blank" class="contact__link link">
+					<svg
+						viewBox="0 0 24 24"
+						width="20"
+						height="20"
+						stroke="currentColor"
+						stroke-width="2"
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+						<polyline points="22,6 12,13 2,6"></polyline>
+					</svg>
+					Skype
+				</a>
+			</li>
+			<li class="contact__item">
+				<a href="" target="_blank" class="contact__link link">
+					<svg
+						viewBox="0 0 24 24"
+						width="20"
+						height="20"
+						stroke="currentColor"
+						stroke-width="2"
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M16.4006 4.10212C15.3002 3.58725 14.1235 3.21306 12.8934 3C12.7423 3.27314 12.5658 3.64052 12.4441 3.93277C11.1364 3.73611 9.84077 3.73611 8.55716 3.93277C8.43551 3.64052 8.25499 3.27314 8.10252 3C6.87108 3.21306 5.69307 3.58862 4.59264 4.10485C2.37304 7.45894 1.77134 10.7297 2.07219 13.9541C3.54434 15.0535 4.97104 15.7213 6.37366 16.1583C6.71997 15.6817 7.02881 15.175 7.29491 14.641C6.78815 14.4485 6.30279 14.2109 5.84418 13.935C5.96584 13.8448 6.08485 13.7506 6.19983 13.6536C8.99704 14.9619 12.0363 14.9619 14.8001 13.6536C14.9164 13.7506 15.0354 13.8448 15.1558 13.935C14.6958 14.2122 14.2091 14.4498 13.7023 14.6424C13.9684 15.175 14.276 15.6831 14.6236 16.1596C16.0275 15.7226 17.4556 15.0549 18.9277 13.9541C19.2808 10.2162 18.3247 6.9755 16.4006 4.10212ZM7.67598 11.9712C6.83629 11.9712 6.14768 11.1873 6.14768 10.2326C6.14768 9.27805 6.82157 8.49275 7.67598 8.49275C8.53044 8.49275 9.21899 9.27666 9.20433 10.2326C9.20566 11.1873 8.53044 11.9712 7.67598 11.9712ZM13.324 11.9712C12.4842 11.9712 11.7956 11.1873 11.7956 10.2326C11.7956 9.27805 12.4695 8.49275 13.324 8.49275C14.1783 8.49275 14.867 9.27666 14.8523 10.2326C14.8523 11.1873 14.1783 11.9712 13.324 11.9712Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>						
+					Discord
+				</a>
+			</li>
+			<li class="contact__item">
 				<a href="mailto:diazgonzaloluis@gmail.com?Subject=Hello%20Gonzalo" target="_blank" class="contact__link link">
 					<svg
 						viewBox="0 0 24 24"
@@ -359,10 +394,10 @@
 			</li>
 		</ul>
 	</section>
-	<section class="homepage__section homepage__section-quote">
-		<p>
-			<em>“We all make choices in life, but in the end our choices make us.”</em><br>
-			— Andrew Ryan, ‘Bioshock’.
-		</p>
-	</section>
 </div>
+<section class="homepage__section homepage__section--quote">
+	<p>
+		<em>“We all make choices in life, but in the end our choices make us.”</em><br>
+		— Andrew Ryan, ‘Bioshock’.
+	</p>
+</section>
