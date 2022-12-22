@@ -14,7 +14,6 @@
 		min-height: 100vh;
 		margin: 0;
 		font-family: var(--family);
-		font-size: 17px;
 		letter-spacing: 0.025rem;
 		color: var(--text);
 		background-color: var(--bg);

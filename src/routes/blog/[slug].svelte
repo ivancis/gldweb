@@ -121,7 +121,6 @@
 		display: grid;
 		grid-auto-flow: column;
 		grid-gap: 0.5rem;
-		font-size: 0.875rem;
 		padding: 1rem;
 		text-decoration: none;
 		align-items: center;

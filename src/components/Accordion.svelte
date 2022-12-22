@@ -6,34 +6,74 @@
 			id: 1,
 			gaming: true,
 			class: "gaming",
-			title: "Gaming localization",
-			content: "Internationalization for target audiences in culture, region, and language. JSON file edit for software termbase, specific game terminology. Styleguides, internal/external lexicon, tone of voice definition and documentation.",
-			active: false,
+			title: "Translation and localization",
+			content: "Translating and localizing user interface elements, dialogues, scripts, websites, marketing texts,  game guides, patch notes, subtitles, esports articles, and more.",
+			active: true,
 		},
 		{
 			id: 2,
-			literacy: true,
-			class: "literacy",
-			title: "Storytelling",
-			content: "Well seasoned in a range of projects: IT documentation, user interviews, surveys audit, media & press, corporate videos subtitles, some voiceovers.",
+			gaming: true,
+			class: "gaming",
+			title: "Consultancy",
+			content: "Helping you internationalize your video game to ensure a flawless localization. Not sure what languages to localize you game into? I can help with that, too!",
 			active: false,
 		},
 		{
 			id: 3,
-			compass: true,
-			class: "compass",
-			title: "Collaboration",
-			content: "Systemic thinker with an agile aproach, experienced in cross-functional teams. Native facilitator, knowledge sharing, mentorship. ISTP-A personality.",
+			gaming: true,
+			class: "gaming",
+			title: "SEO and ASO",
+			content: "Choosing the perfect words to improve your ranking on game stores and search engines.",
 			active: false,
 		},
 		{
 			id: 4,
-			duck: true,
-			class: "duck",
-			title: "Rubberduck",
-			content: "Mission mindset, business-driver KPI, task prioritization, constraint management. Experienced definig and managing acceptance criteria.",
+			gaming: true,
+			class: "gaming",
+			title: "Testing/LQA",
+			content: "Finding context mistakes, truncated text, and grammar errors by playing the game. Don’t become the next localization meme!",
 			active: false,
-		}
+		},
+		{
+			id: 5,
+			gaming: true,
+			class: "gaming",
+			title: "Glossary creation",
+			content: "Crafting customized glossaries and translation memories to ensure a consistent localization.",
+			active: false,
+		},
+		// {
+		// 	id: 1,
+		// 	gaming: true,
+		// 	class: "gaming",
+		// 	title: "Gaming localization",
+		// 	content: "Internationalization for target audiences in culture, region, and language. JSON file edit for software termbase, specific game terminology. Styleguides, internal/external lexicon, tone of voice definition and documentation.",
+		// 	active: false,
+		// },
+		// {
+		// 	id: 2,
+		// 	literacy: true,
+		// 	class: "literacy",
+		// 	title: "Storytelling",
+		// 	content: "Well seasoned in a range of projects: IT documentation, user interviews, surveys audit, media & press, corporate videos subtitles, some voiceovers.",
+		// 	active: false,
+		// },
+		// {
+		// 	id: 3,
+		// 	compass: true,
+		// 	class: "compass",
+		// 	title: "Collaboration",
+		// 	content: "Systemic thinker with an agile aproach, experienced in cross-functional teams. Native facilitator, knowledge sharing, mentorship. ISTP-A personality.",
+		// 	active: false,
+		// },
+		// {
+		// 	id: 4,
+		// 	duck: true,
+		// 	class: "duck",
+		// 	title: "Rubberduck",
+		// 	content: "Mission mindset, business-driver KPI, task prioritization, constraint management. Experienced definig and managing acceptance criteria.",
+		// 	active: false,
+		// }
 	]
 	const expand = (section) => {
 		sections = sections.map(s => {
@@ -49,12 +89,13 @@
 <style>
 
 	.accordion__item {
-		padding: .5em;
-    	margin: -1em;
+		padding: 0 2rem 2rem 0;
+		max-width: calc(var(--colSize) / 1);
+		width: 100%;
 	}
 	
-	.accordion__item:last-child {
-		/* --accordionContentBorder: none; */
+	.accordion__item:nth-child(1) {
+		padding-right: 0;
 	}
 
 	.accordion__trigger {
@@ -104,8 +145,8 @@
 	}
 
 	.accordion-icon svg {
-		width: 32px;
-		height: 32px;
+		width: 48px;
+		height: 48px;
 		fill: none;
 		stroke: currentColor;
 		stroke-width: 1px;
@@ -118,9 +159,8 @@
 	}
 
 	.accordion-content {
-		padding: 0 16px 0 32px;
-    	border-left: var(--accordionContentBorder, 1px solid var(--border));
-    	margin: 0 auto 16px 24px;
+		padding: 0 0 1rem;
+    margin: 0 auto 1rem 1.5rem;
 	}
 
 	.svg-literacy__page {
@@ -453,12 +493,13 @@
 		{#if section.compass}
 			<div class="accordion-icon" data-active={section.active}>
 				<svg version="1.1" viewbox="0 0 24 24">
-				<circle class="svg-compass" cx="12" cy="12" r="10"></circle>
-				<polygon class="svg-compass__needle" points="12,6 9,12 12,18 15,12"></polygon></svg>
+					<circle class="svg-compass" cx="12" cy="12" r="10"></circle>
+					<polygon class="svg-compass__needle" points="12,6 9,12 12,18 15,12"></polygon>
+				</svg>
 			</div>
 		{/if}
         <div class="accordion-title">
-            <h4>{section.title}</h4>
+          <h5>{section.title}</h5>
         </div>
     </div>
 	{#if section.active}

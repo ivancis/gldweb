@@ -19,7 +19,7 @@
 <style>
 	.col {
 		display: grid;
-		grid-gap: 10vh;
+		grid-gap: 5vh;
 		margin: 0 auto auto;
 		width: 100%;
 		max-width: var(--colSize);
@@ -28,23 +28,25 @@
 	header {
 		display: grid;
 		grid-gap: .5rem;
-		margin: 10vh 0 0;
+		padding: 7.5vh 2rem 10vh;
 		width: 100%;
+		background-color: var(--accentD);
+		border-radius: 1rem;
 	}
 
-	.contact-details {
+	.contact {
 		display: flex;
 		flex-wrap: wrap;
 		grid-gap: 2rem;
 		margin: 1rem auto 1rem 0;
 	}
 
-	.contact-details__item {
+	.contact__item {
 		flex: 1 0 auto;
     	margin: -.5rem;
 	}
 
-	.contact-details__link {
+	.contact__link {
 		display: flex;
 		align-items: center;
 		padding: 0;
@@ -52,37 +54,34 @@
 		padding: .5rem;
 	}
 	
-	.contact-details__link--mega {
-		font-size: 1.5rem;
+	.contact__link--mega {
 		padding: 0;
 	}
 	
-	.contact-details__link--mega:hover {
+	.contact__link--mega:hover {
 		text-decoration: underline;
 	}
 
 	.homepage__section {
 		display: grid;
+		grid-template-rows: auto 1fr;
 		grid-gap: 0.5rem;
+		min-height: 30vh;
+		padding: 5vh 0;
 	}
 	
-	.homepage__section-portfolio {
-		grid-template-columns: repeat(auto-fit, minmax(min-content, calc(var(--colSize) / 2 - 1.5rem)));
-		grid-gap: 3rem;
+	.homepage__section--portfolio {
 	}
 	
-	.homepage__section-contact-details {
-		max-width: 50ch;
+	.homepage__section--contact {
+		background: var(--bgInverted);
 		grid-gap: 2rem;
-	}
-	
-	.homepage__section-contact-details p {
-		max-width: var(--colSize);
+		padding: 2rem;
+		border-radius: 1rem;
 	}
 	
 	.homepage__section-quote p {
 		text-align: center;
-		font-size: 0.75rem;
 		bottom: 0;
 		left: 0;
 		width: 100%;
@@ -148,7 +147,6 @@
 	}
 	
 	.works-link__cover {
-		font-size: 8px;
 		padding: 2px;
 		text-align: center;
 		font-family: monospace;
@@ -168,7 +166,6 @@
 
 	.works-link h5 {
 		margin: auto 0;
-		font-size: .85rem;
 		/* opacity: 0; */
 	}
 
@@ -194,28 +191,31 @@
 	}
 
 	.accordions {
-		display: grid;
-		grid-gap: 1.5rem;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
 		margin: 0 auto auto 0;
 	}
 
 </style>
 
 <svelte:head>
-	<title>GLDT</title>
+	<title>GDB Translations</title>
 </svelte:head>
 
 
 
-<div class="col">
-	<header>
+<header>
+	<div class="col">
 		<h1>Hola, I’m Gonzalo.</h1>
-		<div class="bio">
+		<div class="bio col">
 			<h2>I'm a Gameloc Specialist.</h2>
-			<h3>If you are looking for a passionate, committed, creative professional translator...<br> you have found it!</h3>
+			<h3>If you are looking for a passionate, committed, creative professional translator... you have found it!</h3>
 		</div>
-	</header>
-	<section class="homepage__section homepage__section-portfolio">
+	</div>
+</header>
+<div class="col">
+	<section class="homepage__section homepage__section--portfolio">
 		<!-- <p>
 			I have a BA in Technical-Scientific and Literay Translation in English, but I specialice in video-game localization.
 		<br>
@@ -223,7 +223,7 @@
 		<br>
 			I'm also experienced as a generalist for different projects, like IT documentation, media & press, corporate videos subtitles, voiceovers, interviews and surveys.
 		</p> -->
-		<ul class="works-list">
+		<!-- <ul class="works-list">
 			<h5 class="section-title">Case studies:</h5>
 			{#each posts as post}
 				<li class="works-item">
@@ -238,45 +238,48 @@
 					</a>
 				</li>
 			{/each}
-		</ul>
+		</ul> -->
+		<h5 class="section-title">What I do:</h5>
 		<div class="accordions">
-			<h5 class="section-title">What I do:</h5>
 			<Accordion/>
 		</div>
 	</section>
-	<section class="homepage__section homepage__section-contact-details">
+</div>
+<div class="col">
+	<section class="homepage__section homepage__section--contact">
 		<h5 class="section-title">Get in touch:</h5>
 		<p>
-			I'm based in Argentina, but mostly available in Eastern Standard Time.
+			Start your next localization project now!
+			<br>
+			PST and CET Time Zones. Based in Argentina.
 		</p>
 		<a
 			href="mailto:diazgonzaloluis@gmail.com?Subject=Hello%20Gonzalo"
 			target="_blank"
-			class="contact-details__link contact-details__link--mega link"
+			class="contact__link contact__link--mega link"
 		>
-			email@email.com
+			<h4>diazgonzaloluis@gmail.com</h4>
 		</a>
-		<a href="tel:+54 341 3157805" class="contact-details__link contact-details__link--mega link">
-			<svg
-				viewBox="0 0 24 24"
-				width="24"
-				height="24"
-				stroke="currentColor"
-				stroke-width="2"
-				fill="none"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			>
-				<path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-			</svg>
-			+54 341 3157805
-		</a>
-		<p>
-			I'd absolutly love to share a chat for any consultation and work inqueries you may have.
-		</p>
-		<ul class="contact-details">
-			<li class="contact-details__item">
-				<a href="mailto:diazgonzaloluis@gmail.com?Subject=Hello%20Gonzalo" target="_blank" class="contact-details__link link">
+		<!-- <a href="tel:+54 341 3157805" class="contact__link contact__link--mega link">
+			<h4>
+				<svg
+					viewBox="0 0 24 24"
+					width="24"
+					height="24"
+					stroke="currentColor"
+					stroke-width="2"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+				</svg>
+				+54 341 3157805
+			</h4>
+		</a> -->
+		<ul class="contact">
+			<li class="contact__item">
+				<a href="mailto:diazgonzaloluis@gmail.com?Subject=Hello%20Gonzalo" target="_blank" class="contact__link link">
 					<svg
 						viewBox="0 0 24 24"
 						width="20"
@@ -293,8 +296,8 @@
 					Email
 				</a>
 			</li>
-			<li class="contact-details__item">
-				<a href="https://www.proz.com/profile/3044101" target="_blank" class="contact-details__link link">
+			<li class="contact__item">
+				<a href="https://www.proz.com/profile/3044101" target="_blank" class="contact__link link">
 					<svg
 						viewBox="0 0 24 24"
 						width="20"
@@ -314,8 +317,8 @@
 					ProZ
 				</a>
 			</li>
-			<li class="contact-details__item">
-				<a href="https://www.linkedin.com/in/gonzalo-luis-d%C3%ADaz-09ab70196/" target="_blank" class="contact-details__link link">
+			<li class="contact__item">
+				<a href="https://www.linkedin.com/in/gonzalo-luis-d%C3%ADaz-09ab70196/" target="_blank" class="contact__link link">
 					<svg
 						viewBox="0 0 24 24"
 						width="20"
@@ -333,8 +336,8 @@
 					LinkedIn
 				</a>
 			</li>
-			<li class="contact-details__item">
-				<a href="cv_gdb.pdf" target="_blank" class="contact-details__link link">
+			<li class="contact__item">
+				<a href="cv_gdb.pdf" target="_blank" class="contact__link link">
 					<svg
 						viewBox="0 0 24 24"
 						width="20"
